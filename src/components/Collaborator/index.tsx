@@ -7,25 +7,21 @@ interface CollaboratorProps {
   name: string
   image: string
   role: string
+  date: string
 }
 
-const Collaborator = ({ primaryColor, secondaryColor, image, name, role }: CollaboratorProps) => {
-  // const onImageError = (e) => {
-  //   e.target.src = defaultUser;
-  //   e.target.style.backgroundColor = secondaryColor;
-  // };
-
+const Collaborator = ({ primaryColor, image, name, role, date }: CollaboratorProps) => {
   return (
     <div className="collaborator">
       <div className="header" style={{backgroundColor: primaryColor}}>
         <img src={image} 
           alt={name} 
-          // onError={onImageError} 
         />
       </div>
       <div className="footer">
         <h4 style={{ color: primaryColor }}>{name}</h4>
         <h5>{role}</h5>
+        <h5>{new Date(date).toLocaleDateString()}</h5>
       </div>
     </div>
   );

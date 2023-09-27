@@ -7,9 +7,10 @@ interface InputTextProps {
   placeholder: string
   required?: boolean
   value: string
+  type?: 'text' | 'password' | 'date' | 'email' | 'number'
 }
 
-const InputText = ({ label, placeholder, onHandleChange, value, required = false }: InputTextProps) => {
+const InputText = ({ label, placeholder, onHandleChange, value, required = false, type = 'text' }: InputTextProps) => {
 
   const handleType = (e: React.ChangeEvent<HTMLInputElement>) => {
     onHandleChange(e.target.value)
@@ -23,6 +24,7 @@ const InputText = ({ label, placeholder, onHandleChange, value, required = false
         required={required}
         onChange={handleType}
         value={value}
+        type={type}
         />
     </div>
   );

@@ -3,4 +3,5 @@ export interface ICollaborator {
     role: string
     image: string
     team?: string
+    date: string
 }

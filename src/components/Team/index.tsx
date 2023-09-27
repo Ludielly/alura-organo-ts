@@ -25,6 +25,7 @@ const Team = ({ teamName, collaborators, primaryColor, secondaryColor } : TeamPr
               image={collaborator.image}
               name={collaborator.name}
               role={collaborator.role}
+              date={collaborator.date}
             />
           ))}
         </div>

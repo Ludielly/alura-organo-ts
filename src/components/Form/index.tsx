@@ -15,6 +15,7 @@ const Form = ({ registeredCollaborator, teams }: FormProps) => {
   const [role, setRole] = useState("");
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,11 +24,13 @@ const Form = ({ registeredCollaborator, teams }: FormProps) => {
       role,
       image,
       team,
+      date
     });
     setName("");
     setRole("");
     setImage("");
     setTeam("");
+    setDate("");
   };
 
   return (
@@ -53,6 +56,13 @@ const Form = ({ registeredCollaborator, teams }: FormProps) => {
           placeholder="Digite o endereço da imagem"
           value={image}
           onHandleChange={(value) => setImage(value)}
+        />
+        <InputText
+          label="Data de ingresso"
+          placeholder=""
+          value={date}
+          type='date'
+          onHandleChange={(value) => setDate(value)}
         />
         <DropdownList
           label="Time"
